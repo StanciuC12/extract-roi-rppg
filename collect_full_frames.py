@@ -269,8 +269,10 @@ if __name__ == "__main__":
         capture = cv2.VideoCapture(0)
 
         #frames_tensor = processor.get_data_from_capture(capture, num_frames)
-        for frames_tensor in processor.get_data_from_capture(capture, save_adr=save_folder):
-            print(frames_tensor.shape)
+        i = 0
+        for frames_tensor in processor.get_data_from_capture_full_frame(capture, save_adr=save_folder):
+            print(i)
+            i += 1
 
     else:
         spo2_csvs = [
